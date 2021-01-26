@@ -1,0 +1,8 @@
+<button (click)="toggleDisplay()">Costing</button>
+
+<div *ngIf="isShow">
+  <app-costing></app-costing>
+  <app-service-breakdown></app-service-breakdown>
+  <app-reservation-coverage></app-reservation-coverage>
+</div>
+
