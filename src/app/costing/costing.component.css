@@ -1,0 +1,8 @@
+mat-card {
+    text-align: center;
+    box-shadow: none !important;
+}
+
+#lastCost {
+    color: #f79f98;
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartType } from 'chart.js';
-import { MultiDataSet, Label } from 'ng2-charts';
+import { MultiDataSet, Label, Color } from 'ng2-charts';
 
 export interface PeriodicElement {
   currency: string;
@@ -14,10 +14,15 @@ export interface PeriodicElement {
 })
 export class ServiceBreakdownComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
+    console.log(this.vars);
+    console.log(this.doughnutChartColor)
   }
+
+  public cur = [2055.97, 1000.00, 2340.32, 102.69, 150.00, 2300.97];
 
   formatMoney(money: number, formatCur: string){
     var formatter = new Intl.NumberFormat('en-US', {
@@ -32,21 +37,57 @@ export class ServiceBreakdownComponent implements OnInit {
     return formatter.format(money); /* $2,500.00 */
   }
 
-  ELEMENT_DATA: PeriodicElement[] = [
-    {service: 'EC2', currency: this.formatMoney(2055.97,"USD")},
-    {service: 'EFS', currency: this.formatMoney(0.00,"USD")},
-    {service: 'OTHER', currency: this.formatMoney(234.32,"USD")},
-    {service: 'S3', currency: this.formatMoney(10.69,"USD")},
-    {service: 'SUPPORT', currency: this.formatMoney(0.00,"USD")},
-    {service: 'TOTAL', currency: this.formatMoney(2300.97,"USD")},
+
+  public vars = [
+    {
+      service: 'EC2',
+      currency: this.formatMoney(this.cur[0],"USD"),
+      color: "#4496d1"
+    },
+    {
+      service: 'EFS',
+      currency: this.formatMoney(this.cur[1],"USD"),
+      color: "#779b3e"
+    },
+    {
+      service: 'OTHER',
+      currency: this.formatMoney(this.cur[2],"USD"),
+      color: "#c0432c"
+    },
+    {
+      service: 'S3',
+      currency: this.formatMoney(this.cur[3],"USD"),
+      color: "#fa822a"
+    },
+    {
+      service: 'SUPPORT',
+      currency: this.formatMoney(this.cur[4],"USD"),
+      color: "#df9c18"
+    },
+    {
+      service: 'TOTAL',
+      currency: this.formatMoney(this.cur[5],"USD"),
+    },
   ];
 
-  displayedColumns: string[] = ['service', 'currency'];
-  dataSource = this.ELEMENT_DATA;
+  // ELEMENT_DATA: PeriodicElement[] = [
+  //   {service: 'EC2', currency: this.formatMoney(2055.97,"USD")},
+  //   {service: 'EFS', currency: this.formatMoney(0.00,"USD")},
+  //   {service: 'OTHER', currency: this.formatMoney(234.32,"USD")},
+  //   {service: 'S3', currency: this.formatMoney(10.69,"USD")},
+  //   {service: 'SUPPORT', currency: this.formatMoney(0.00,"USD")},
+  //   {service: 'TOTAL', currency: this.formatMoney(2300.97,"USD")},
+  // ];
 
-  public doughnutChartLabels: Label[] = ['EC2', 'EFS', 'OTHER', 'S3', 'SUPPORT'];
+  // displayedColumns: string[] = ['service', 'currency'];
+  // dataSource = this.ELEMENT_DATA;
+  public doughnutChartColor: Color[] = [{
+    backgroundColor: [this.vars[0].color!,this.vars[1].color!,this.vars[2].color!,this.vars[3].color!,this.vars[4].color!]
+  }];
+
+  public doughnutChartLabels: Label[] = [this.vars[0].service, this.vars[1].service, this.vars[2].service, this.vars[3].service, this.vars[4].service];
   public doughnutChartData: MultiDataSet = [
-    [2055.97, 1000.00, 234.32, 100.69, 1000.00],
+    [this.cur[0], this.cur[1], this.cur[2], this.cur[3], this.cur[4]],
   ];
   public doughnutChartType: ChartType = 'doughnut';
 
