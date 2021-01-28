@@ -1,26 +1,8 @@
-<mat-grid-list cols="4" rowHeight="1:1">
-    <mat-grid-tile>
+<mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile *ngFor="let val of vars">
         <mat-card>
-            <mat-card-title>{{formatMoney(2300.97,"USD")}}</mat-card-title>
-            <mat-card-subtitle>MONTH TO DATE</mat-card-subtitle>
-        </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <mat-card>
-            <mat-card-title>{{formatMoney(2624.49,"USD")}}</mat-card-title>
-            <mat-card-subtitle>ESTIMATED SPEND</mat-card-subtitle>
-        </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <mat-card>
-            <mat-card-title>{{formatMoney(285.42,"USD")}}</mat-card-title>
-            <mat-card-subtitle>LAST MONTH</mat-card-subtitle>
-        </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <mat-card>
-            <mat-card-title id="lastCost">{{formatMoney(2339.08,"USD")}}</mat-card-title>
-            <mat-card-subtitle>CHANGE FROM LAST MONTH</mat-card-subtitle>
+            <mat-card-title [ngClass]="{'color': val.important == true}">{{val.currencyUnit}}{{val.value}}</mat-card-title>
+            <mat-card-subtitle>{{val.name}}</mat-card-subtitle>
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>

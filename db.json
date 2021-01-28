@@ -1,26 +1,26 @@
 {
   "cost": [
     {
-      "name": "Month To Date",
-      "value": 10000,
+      "name": "MONTH TO DATE",
+      "value": 2300.97,
       "currencyUnit": "$",
       "important": false
     },
     {
-      "name": "Estimated Spend",
-      "value": 10000,
+      "name": "ESTIMATED SPEND",
+      "value": 2624.29,
       "currencyUnit": "$",
       "important": false
     },
     {
-      "name": "Last Month",
-      "value": 10000,
+      "name": "LAST MONTH",
+      "value": 285.42,
       "currencyUnit": "$",
       "important": false
     },
     {
-      "name": "Change from Last Month",
-      "value": 10000,
+      "name": "CHANGE FROM LAST MONTH",
+      "value": 2339.08,
       "currencyUnit": "$",
       "important": true
     }
@@ -28,65 +28,65 @@
   "services": [
     {
       "name": "EC2",
-      "price": 100.1,
+      "price": 2055.97,
       "currency": "$",
-      "color": "yellow"
-    },
-    {
-      "name": "S3",
-      "price": 120.6,
-      "currency": "$",
-      "color": "blue"
+      "color": "#4496d1"
     },
     {
       "name": "EFS",
-      "price": 100.1,
+      "price": 1000.0,
       "currency": "$",
-      "color": "red"
-    },
-    {
-      "name": "SUPPORT",
-      "price": 100.1,
-      "currency": "$",
-      "color": "green"
+      "color": "#c0432c"
     },
     {
       "name": "OTHER",
-      "price": 227.7,
+      "price": 1234.32,
       "currency": "$",
-      "color": "orange"
+      "color": "#df9c18"
+    },
+    {
+      "name": "S3",
+      "price": 1110.69,
+      "currency": "$",
+      "color": "#779b3e"
+    },
+    {
+      "name": "SUPPORT",
+      "price": 2000.00,
+      "currency": "$",
+      "color": "#fa822a"
     }
   ],
   "instance": [
     {
       "name": "T2 Medium",
       "demand": 1021.22,
-      "reserved": 0
+      "reserved": 250
     },
     {
       "name": "T2 Nano",
       "demand": 2184.22,
-      "reserved": 0
+      "reserved": 431
     },
     {
       "name": "M4.Large",
-      "demand": 1021.22,
-      "reserved": 0
+      "demand": 102.22,
+      "reserved": 132
     },
     {
       "name": "T2 Micro",
-      "demand": 1021.22,
+      "demand": 821.22,
       "reserved": 1000
     },
     {
       "name": "M3.Medium",
-      "demand": 1021.22,
-      "reserved": 0
+      "demand": 400.22,
+      "reserved": 453
     },
     {
       "name": "T2 Small",
-      "demand": 1021.22,
-      "reserved": 0
+      "demand": 221.22,
+      "reserved": 123
     }
   ]
 }

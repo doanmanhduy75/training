@@ -12,6 +12,8 @@ import { ServiceBreakdownComponent } from './service-breakdown/service-breakdown
 import {MatTableModule} from '@angular/material/table';
 import { ChartsModule } from 'ng2-charts';
 import { ReservationCoverageComponent } from './reservation-coverage/reservation-coverage.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,10 @@ import { ReservationCoverageComponent } from './reservation-coverage/reservation
     MatCardModule,
     MatTableModule,
     ChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatIconModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

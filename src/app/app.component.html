@@ -1,4 +1,10 @@
-<button (click)="toggleDisplay()">Costing</button>
+<mat-toolbar>
+  <div class="collapsible-header" (click)="toggleDisplay()">
+    <i class="material-icons" *ngIf="isShow">arrow_drop_down</i>
+    <i class="material-icons" *ngIf="!isShow">arrow_right</i>
+  </div>
+  <span>Costing</span>
+</mat-toolbar>
 
 <div *ngIf="isShow">
   <app-costing></app-costing>

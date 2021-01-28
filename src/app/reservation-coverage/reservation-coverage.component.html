@@ -1,7 +1,7 @@
-<h1 class="content">RESERVATION COVERAGE</h1>
+<h2 class="content">RESERVATION COVERAGE</h2>
 
-<mat-grid-list cols="2" rowHeight="1:1">
-    <mat-grid-tile>
+<mat-grid-list cols="4" rowHeight="250px">
+    <mat-grid-tile colspan="2">
         <mat-card class="table" style="width: 100%">
           <table style="width: 100%">
             <tr>
@@ -11,25 +11,26 @@
               <th class="border">TOTAL HOURS</th>
               <th class="border">COVERAGE</th>
             </tr>  
-            <tr *ngFor="let instance of instances">
-              <td>{{instance.instanceType}}</td>
-              <td class="demandHour textRight">{{instance.demandHour}}</td>
-              <td class="reversedHour textRight">{{instance.reversedHour}}</td>
-              <td class="textRight">{{instance.totalHour}}</td>
-              <td class="textRight">{{instance.coverage}}%</td>
-            </tr>
+            <tr *ngFor="let ins of vars">
+              <td>{{ins.name}}</td>
+              <td class="demandHour textRight">{{ins.demand}}</td>
+              <td class="reversedHour textRight">{{ins.reserved}}</td>
+              <td class="textRight">{{ins.demand + ins.reserved}}</td>
+              <td class="textRight">{{ins.reserved/(ins.demand + ins.reserved)*100 | percent}}</td>
+            </tr> 
           </table>
         </mat-card>
     </mat-grid-tile>
-    <mat-grid-tile>
+    <mat-grid-tile colspan="2">
         <mat-card class="table">
             <div style="display: block;">
-                <canvas width="400" height="200" baseChart 
+                <canvas width="500" height="200" baseChart 
                   [datasets]="barChartData"
                   [labels]="barChartLabels"
                   [options]="barChartOptions"
                   [plugins]="barChartPlugins"
                   [legend]="false"
+                  [colors]= "barChartColors"
                   [chartType]="barChartType">
                 </canvas>
               </div>

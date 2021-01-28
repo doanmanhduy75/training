@@ -1,23 +1,30 @@
-<h1 class="content">SERVICE BREAKDOWN</h1>
+<h2 class="content">SERVICE BREAKDOWN</h2>
 
-<mat-grid-list cols="2" rowHeight="1:1">
-  <mat-grid-tile>
+<mat-grid-list cols="2" rowHeight="200px">
+  <mat-grid-tile colspan="1">
       <mat-card class="table">
-        <table style="width: 500%">
-          <tr *ngFor="let data of vars">
-            <td>
-              {{data.service}}
-              <div *ngIf="data.service != 'TOTAL'" class="foo" [style] = "{'background-color':data.color }"></div>
+        <table style="width: 420%">
+          <tr *ngFor="let data of vars, index as i">
+            <td [ngClass]="{'bgcolor': i%2 == 0}">
+              {{data.name}}
+              <div class="foo" [style] = "{'background-color':data.color }"></div>
             </td>
-            <td>{{data.currency}}</td>
+            <td [ngClass]="{'bgcolor': i%2 == 0}" class="res">{{data.currency}}{{data.price}}</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="foowhite" [style] = "{'background-color':'white' }"></div>
+              <div><b>TOTAL</b></div>
+            </td>
+            <td class="res"><b>{{unit}}{{totalResult}}</b></td>
           </tr>
         </table>
       </mat-card>
   </mat-grid-tile>
-  <mat-grid-tile>
-    <mat-card class="table">
+  <mat-grid-tile colspan="1">
+    <mat-card class="table doughnut">
       <div style="display: block;">
-        <canvas baseChart width="200" height="150"
+        <canvas baseChart width="200" height="170"
           [data]="doughnutChartData"
           [labels]="doughnutChartLabels"
           [chartType]="doughnutChartType"

@@ -2,6 +2,10 @@
   box-shadow: none !important;
 }
 
+.doughnut{
+  margin: auto;
+}
+
 .content{
   color: #58a5c0;
 }
@@ -15,6 +19,23 @@
   border: 1px solid rgba(0, 0, 0, .2);
 }
 
+.foowhite {
+  float: left;
+  width: 10px;
+  height: 10px;
+  margin-top: 3px;
+  margin-right: 6px;
+  border: 1px solid white;
+}
+
 .blue {
   background: #13b4ff;
+}
+
+.res{
+  text-align: right;
+}
+
+.bgcolor{
+  background-color: rgba(42, 85, 165, 0.219);
 }

@@ -4,12 +4,13 @@ import {HttpClient} from '@angular/common/http'
 @Injectable({
   providedIn: 'root'
 })
-export class CostingService {
-  server_url = 'http://localhost:3000/cost'
+export class ServiceBreakdownService {
 
   constructor(private http: HttpClient) { }
 
-  getCosting() {
+  server_url = 'http://localhost:3000/services'
+
+  getService() {
     return this.http.get(this.server_url)
   }
 }
